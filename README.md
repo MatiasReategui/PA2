@@ -114,7 +114,3 @@ Nota: Las capturas se encuentran en la carpeta [`evidencias/`](evidencias/):
 - Modelar los datos con Mongoose, con validaciones y `enum`, permitió detectar entradas inválidas antes de llegar a la base de datos y mantener la información consistente.
 - Separar modelos, rutas y middleware facilitó el trabajo en paralelo entre los integrantes y reduce los conflictos al integrar el código en el repositorio.
 - Esta API será la base para conectar el frontend desarrollado en la PA1, reemplazando el servicio que usaba la API pública por llamadas al backend propio.
-
-## Video de exposición
-
-**Video público de YouTube:** [PEGAR AQUÍ EL ENLACE] 
