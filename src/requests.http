@@ -1,0 +1,39 @@
+### Pruebas HTTP (extensión REST Client de VS Code)
+@base = http://localhost:3000
+
+### 1. Registrar estudiante
+POST {{base}}/api/auth/register
+Content-Type: application/json
+
+{ "nombre": "Ana Pérez", "email": "ana@ejemplo.com", "password": "123456" }
+
+### 2. Login (copiar el token y pegarlo abajo)
+POST {{base}}/api/auth/login
+Content-Type: application/json
+
+{ "email": "ana@ejemplo.com", "password": "123456" }
+
+### 3. Crear solicitud
+POST {{base}}/api/solicitudes
+Content-Type: application/json
+Authorization: Bearer PEGAR_TOKEN
+
+{ "titulo": "Constancia de estudios", "descripcion": "Necesito constancia para trámite", "tipo": "constancia" }
+
+### 4. Listar solicitudes
+GET {{base}}/api/solicitudes
+Authorization: Bearer PEGAR_TOKEN
+
+### 5. Actualizar solicitud
+PUT {{base}}/api/solicitudes/PEGAR_ID
+Content-Type: application/json
+Authorization: Bearer PEGAR_TOKEN
+
+{ "descripcion": "Descripción actualizada" }
+
+### 6. Sin token -> 401
+GET {{base}}/api/solicitudes
+
+### 7. Eliminar (estudiante -> 403; admin -> 200)
+DELETE {{base}}/api/solicitudes/PEGAR_ID
+Authorization: Bearer PEGAR_TOKEN
